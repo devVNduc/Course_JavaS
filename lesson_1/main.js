@@ -693,21 +693,82 @@ console.log("🚀 ~ file: main.js:693 ~ customForeah ~ customForeah:", customFor
 // console.log("🚀 ~ file: main.js:691 ~ customForeah ~ customForeah:", customForeah)
 //custom find
 Array.prototype.find = function (callback) {
-    var Output = [];
-    var arrayLenght = this.length;
-    for (let i = 1; i < arrayLenght; i++){
-        if(this[i]>10)
-            var result = callback(this[i])
-        Output.push(result)
-        break;
+    var length = this.length
+    let result
+    for (let i = 0; i < length; i++) {
+        if (callback(this[i])) {
+            result = this[i]
+            break
+        }
     }
-    return Output
+    return result
 }
-
-var numberFinds = ['10', '100', '50', '3x0']
-var found = numberFinds.find(function (numberFind) {
+var numberFinds = ['10', '100', '50', '30']
+var found1 = numberFinds.find(function (numberFind) {
+    if (numberFind > 10)
         return numberFind
-})        
-console.log("🚀 ~ file: main.js:700 ~ found ~ found :", found )
+})
+console.log("🚀 ~ file: main.js:700 ~ found ~ found :", found1)
+//custom filter
+Array.prototype.filter = function (callback) {
+    var length = this.length
+    var arrayFilter = []
+    for (let i = 0; i < length; i++) {
+        if (callback(this[i])) {
+            arrayFilter.push(this[i])
+        }
+    }
+    return arrayFilter
+}
+var found2 = numberFinds.filter(function (numberFind) {
+    if (numberFind > 30)
+        return numberFind
+})
+console.log("🚀 ~ file: main.js:717 ~ found2 ~ found2 :", found2)
+//custom reduce
+Array.prototype.reduce3 = function (callback, results) {
+    let i = 0;
+    if (arguments.length < 2) {
+        i = 1;
+        results = this[0]
+    }
+
+    for (; i < this.length; i++) {
+        results = callback(results, this[i], i, this)
+    }
+    return results
+}
+//ap dung 
+const arrayNumbers = [1, 2, 3, 4, 5]
+function sumArray(arrayNumber) {
+    const result = arrayNumber.reduce3(function (results, currentValue, currentIndex, original) {
+        return results + currentValue
+    }, 0)
+    return result
+}
+console.log('RESULT: ' + sumArray(arrayNumber))
+//custom myMap
+const numbers = [1, 2, 3];
+Array.prototype.myMap = function (cb) {
+    var arrayMap = []
+    var arrayLenght = this.length;
+    var result
+    for (let i = 0; i < arrayLenght; i++) {
+        result = cb(this[i],i)
+        arrayMap.push(result)
+    }
+    return arrayMap
+}
+console.log(numbers.myMap(function (number) {
+    return number * 2;
+}))
+// Output: [2, 4, 6]
+
+// console.log(numbers.myMap(function (number, index) {
+//     return number * index;
+// }))
+// Output: [0, 2, 6]
+
+
 
 
