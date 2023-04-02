@@ -691,5 +691,23 @@ var customForeah = Countries.forEach2(function (Country, index) {
 })
 console.log("🚀 ~ file: main.js:693 ~ customForeah ~ customForeah:", customForeah)
 // console.log("🚀 ~ file: main.js:691 ~ customForeah ~ customForeah:", customForeah)
+//custom find
+Array.prototype.find = function (callback) {
+    var Output = [];
+    var arrayLenght = this.length;
+    for (let i = 1; i < arrayLenght; i++){
+        if(this[i]>10)
+            var result = callback(this[i])
+        Output.push(result)
+        break;
+    }
+    return Output
+}
+
+var numberFinds = ['10', '100', '50', '3x0']
+var found = numberFinds.find(function (numberFind) {
+        return numberFind
+})        
+console.log("🚀 ~ file: main.js:700 ~ found ~ found :", found )
 
 
