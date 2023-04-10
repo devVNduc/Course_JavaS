@@ -703,7 +703,7 @@ Array.prototype.find = function (callback) {
     }
     return result
 }
-var numberFinds = ['10', '100', '50', '30']
+var numberFinds = ['1', '2', '3', '4']
 var found1 = numberFinds.find(function (numberFind) {
     if (numberFind > 10)
         return numberFind
@@ -713,16 +713,18 @@ console.log("🚀 ~ file: main.js:700 ~ found ~ found :", found1)
 Array.prototype.filter = function (callback) {
     var length = this.length
     var arrayFilter = []
-    for (let i = 0; i < length; i++) {
-        if (callback(this[i])) {
-            arrayFilter.push(this[i])
+    for (var index in this) {
+        if (this.hasOwnProperty(index)) {
+            var result = callback(this[index], index, this)
+            if (result) {
+                arrayFilter.push(this[index])
+            }
         }
     }
     return arrayFilter
 }
-var found2 = numberFinds.filter(function (numberFind) {
-    if (numberFind > 30)
-        return numberFind
+var found2 = numberFinds.filter(function (numberFind, index, array) {
+    return array.length % 2 === 0
 })
 console.log("🚀 ~ file: main.js:717 ~ found2 ~ found2 :", found2)
 //custom reduce
@@ -754,7 +756,7 @@ Array.prototype.myMap = function (cb) {
     var arrayLenght = this.length;
     var result
     for (let i = 0; i < arrayLenght; i++) {
-        result = cb(this[i],i)
+        result = cb(this[i], i)
         arrayMap.push(result)
     }
     return arrayMap
@@ -762,13 +764,6 @@ Array.prototype.myMap = function (cb) {
 console.log(numbers.myMap(function (number) {
     return number * 2;
 }))
-// Output: [2, 4, 6]
-
-// console.log(numbers.myMap(function (number, index) {
-//     return number * index;
-// }))
-// Output: [0, 2, 6]
-
 
 
 
