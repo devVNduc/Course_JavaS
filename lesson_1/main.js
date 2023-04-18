@@ -768,13 +768,32 @@ console.log(numbers.myMap(function (number) {
 // 1.Element: ID, class, tag, CSS selector, HTML colectiond
 // 2.Attribute
 // 3.Text
-var headingNode = document.querySelector('.heading')
-console.log(headingNode)
-//
-var productsListElement = document.getElementsByClassName('.products-list');
-console.log("🚀 ~ file: main.js:776 ~ productsListElement:", productsListElement)
-var firstProductElement = document.querySelector('.products-list .product:first-child')
-console.log("🚀 ~ file: main.js:778 ~ firstProductElement:", firstProductElement)
-var buttonElements = document.getElementsByTagName(buttonElements)
-console.log("🚀 ~ file: main.js:780 ~ buttonElements:", buttonElements)
- 
+// var headingNode = document.querySelector('.heading')
+// console.log(headingNode)
+// //
+// var productsListElement = document.getElementsByClassName('.products-list');
+// console.log("🚀 ~ file: main.js:776 ~ productsListElement:", productsListElement)
+// var firstProductElement = document.querySelector('.products-list .product:first-child')
+// console.log("🚀 ~ file: main.js:778 ~ firstProductElement:", firstProductElement)
+// var buttonElements = document.getElementsByTagName(buttonElements)
+// console.log("🚀 ~ file: main.js:780 ~ buttonElements:", buttonElements)
+//add DOM attributes to Element 
+// var h1ADD = document.querySelector('h1')
+// h1ADD.title = "F8 - Học lập trình để đi làm"
+// h1ADD.setAttribute('data-title', "F8 - Học lập trình để đi làm")
+// console.log("🚀 ~ file: main.js:782 ~ title :", h1ADD)
+// var ADDa = document.querySelector('a')
+// console.log("🚀 ~ file: main.js:786 ~ aADD:", ADDa)
+// ADDa.href = "https://fullstack.edu.vn/"
+// ADDa.target = "_blank"
+//innerHTMl
+var courses = ['HTML & CSS', 'Javascript', 'PHP', 'Java']
+function render(courses) {
+
+    var stringCourse = courses.map(function (item) {
+        return `<li>${item}</li>`
+    }).join(' ')
+    document.querySelector('ul').innerHTML = stringCourse
+}
+render(courses)
+console.log("🚀 ~ file: main.js:795 ~ stringCourse:", stringCourse)
