@@ -777,4 +777,19 @@ var firstProductElement = document.querySelector('.products-list .product:first-
 console.log("🚀 ~ file: main.js:778 ~ firstProductElement:", firstProductElement)
 var buttonElements = document.getElementsByTagName(buttonElements)
 console.log("🚀 ~ file: main.js:780 ~ buttonElements:", buttonElements)
- 
+//CSS DOM
+document.querySelector('h1').classList.add('title')
+if (document.querySelector('p').classList.contains('sub-title')
+    === true) {
+    document.querySelector('.sub-title').classList.replace('sub-title', 'content')
+}
+// document.querySelector('.sub-title').classList.replace('sub-title', 'content')
+
+/* The above code is invalid JavaScript syntax. It appears to be a mix of JavaScript and another
+language or tool that uses the ` */
+var classBOX = document.querySelectorAll('div')
+// console.log(typeof classBOX)
+// console.log("🚀 ~ file: main.js:791 ~ classBOX:", classBOX)
+classBOX.forEach(function (item, index) {
+    return item.classList.add('box')
+ })
