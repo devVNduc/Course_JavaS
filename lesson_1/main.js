@@ -678,8 +678,8 @@ var Countries = [
     'Russia'
 ];
 Array.prototype.forEach2 = function (callback) {
-    var Output = [];
-    var arrayLenght = this.length;
+    let Output = [];
+    let arrayLenght = this.length;
     for (var i = 0; i < arrayLenght; i++) {
         var result = callback(i, this[i])
         Output.push(result)
@@ -753,7 +753,7 @@ console.log('RESULT: ' + sumArray(arrayNumber))
 const numbers = [1, 2, 3];
 Array.prototype.myMap = function (cb) {
     var arrayMap = []
-    var arrayLenght = this.length;
+    let arrayLenght = this.length;
     var result
     for (let i = 0; i < arrayLenght; i++) {
         result = cb(this[i], i)
