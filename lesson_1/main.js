@@ -792,4 +792,13 @@ var classBOX = document.querySelectorAll('div')
 // console.log("🚀 ~ file: main.js:791 ~ classBOX:", classBOX)
 classBOX.forEach(function (item, index) {
     return item.classList.add('box')
- })
+})
+//mouse event
+var eventColor = document.querySelector('button')
+console.log("🚀 ~ file: main.js:798 ~ eventColor:", eventColor)
+eventColor.onclick = function (eventColor) { 
+    eventColor.target.style.color = '#fff'
+}
+////
+
+

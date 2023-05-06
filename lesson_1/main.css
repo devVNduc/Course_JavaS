@@ -67,11 +67,12 @@ body {
     font-size: 23px;
     margin: auto;
 } */
-h1{
+/* h1 {
     display: inline-block;
     padding: 20px;
 }
-h1::before{
+
+h1::before {
     position: relative;
     display: inline-block;
     content: "";
@@ -82,7 +83,8 @@ h1::before{
     margin-right: 10px;
     top: -5px;
 }
-h1::after{
+
+h1::after {
     position: relative;
     display: inline-block;
     content: "";
@@ -92,4 +94,11 @@ h1::after{
     border-radius: 999px;
     background-color: gray;
 
-}   
+} */
+
+button {
+    background-color: #f05123;
+    padding: 9px 16px;
+    border-radius: 999px;
+    border: none;
+}
