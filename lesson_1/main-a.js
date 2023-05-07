@@ -48,16 +48,34 @@ function getComments() {
 //     }
 // );
 function getUsersByIds(userIds) {
-    return new Promise(resolve => {
+    return new Promise(reject => {
         setTimeout(() => {
             let result = users.filter(function (userId) { 
                 return userIds.includes(userId.id);
             });
-            resolve(result);
+            reject(result);
         },1000)
     })
 }
 getUsersByIds([4])
-    .then(function (users) {
+    // .then(function (users) {
+    //     console.log("", users);
+    // })
+    .catch(function (users) {
         console.log("", users);
+    })
+let promise123 = new Promise(function (resolve, reject) {
+    reject()
+    resolve()
+
+})
+promise123
+    .then(function () {
+        console.log('Success')   
+    })
+    .catch(function () {
+        console.log("Error");
+    })
+    .finally(function () {
+        console.log('done')
     })
