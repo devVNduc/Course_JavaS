@@ -645,10 +645,10 @@ var arr = [
 ];
 console.log(arrToObj(arr))
 //include
-var arrayCourse = ['a', 'b', 'c']
+let arrayCourse = ['a', 'b', 'c']
 console.log(arrayCourse.includes('a', 1))
 //custom Callback (map,reduce,foreach,filter,find)
-//custom map
+//custom map                                                                        
 var courses = [
     'Javascript',
     'PHP',
@@ -711,11 +711,10 @@ var found1 = numberFinds.find(function (numberFind) {
 console.log("🚀 ~ file: main.js:700 ~ found ~ found :", found1)
 //custom filter
 Array.prototype.filter = function (callback) {
-    var length = this.length
-    var arrayFilter = []
-    for (var index in this) {
+    let arrayFilter = []
+    for (let index in this) {
         if (this.hasOwnProperty(index)) {
-            var result = callback(this[index], index, this)
+            let result = callback(this[index], index, this)
             if (result) {
                 arrayFilter.push(this[index])
             }
