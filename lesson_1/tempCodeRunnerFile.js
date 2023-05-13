@@ -1,2 +1,2 @@
-reject()
-    resolve()
+
+getUserByIds([1,2,3])
