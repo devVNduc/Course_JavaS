@@ -1,4 +1,3 @@
-//xuat ra man hinh ten va comment
 let users = [
     {
         id: 1,
@@ -10,72 +9,105 @@ let users = [
     },
     {
         id: 3,
+        name: "Duong",
+    },
+    {
+        id: 4,
         name: "Dat",
-    }
-    //...
-];
+    },
+]
 let comments = [
     {
         id: 1,
-        user_id: 1,
-        content: 'Ngay mai may gio di hoc'
+        user_id: 4,
+        content: " Ngay mai lop co kiem tra khong"
     },
     {
         id: 2,
-        user_id: 2,
-        content: 'Ngay mai 8 gio di hoc'
+        user_id: 1,
+        content: "Co ngay mai kiem tra day"
     },
-];
-// 1. lay comment
-// 2. tu comments lay ra user_id,
-// 3. tu user_id lay ra user tuong ung
-
-// fake API : mo phong ham goi qua url ma back end tra ve de lay duoc du lieu
-function getComments() {
-    return new Promise(resolve => {
+    {
+        id: 3,
+        user_id: 3,
+        content: "Kiem tra mon gi the"
+    },
+    {
+        id: 4,
+        user_id: 2,
+        content: "Kiem tra mon Java"
+    },
+]
+function getComment() {
+    return new Promise(function (resolve) {
         setTimeout(function () {
-            resolve(comments);
+            resolve(comments)
         },1000)
+     }
+    )
+}
+function getUserByIds(usersId) {
+    return new Promise(function (resolve) {
+            let results = users.filter(function (users) {
+                return usersId.includes(users.id)
+            })
+            resolve(results)
     })
 }
-// getComments()
-//     .then(
-//     (comments) => {
-//             let userIds = comments.map(function (comment) {
-//                 return comment.user_id;
-//             })
-//             console.log("", userIds);
-//     }
-// );
-function getUsersByIds(userIds) {
-    return new Promise(reject => {
-        setTimeout(() => {
-            let result = users.filter(function (userId) { 
-                return userIds.includes(userId.id);
-            });
-            reject(result);
-        },1000)
+getComment()
+    .then(function (comment) {
+        let usersId = comment.map(function (user) {
+            return user.user_id
+        })
+        return getUserByIds(usersId)
+            .then(function (data) {
+                return {
+                    USERS: users,
+                    COMMENTS: comments,
+                }
+            })
     })
-}
-getUsersByIds([4])
-    // .then(function (users) {
-    //     console.log("", users);
-    // })
-    .catch(function (users) {
-        console.log("", users);
+    .then(function (data) {
+        let displayData = document.getElementById("data")
+        let htmls = '';
+        data.COMMENTS.forEach(function (COMMENTS) {
+            let datas = data.USERS.find(function (USERS) {
+                return USERS.id === COMMENTS.user_id
+            })
+            console.log(datas)
+            htmls += `<li>${datas.name}: ${COMMENTS.content}</li>`
+        })
+        displayData.innerHTML = htmls
     })
-let promise123 = new Promise(function (resolve, reject) {
-    reject()
-    resolve()
+var postsAPI = "https://jsonplaceholder.typicode.com/posts";
+fetch(postsAPI)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        var htmls = data.map(function (infor) {
+            return `<li>
+            <h1>${infor.title}</h1>    
+            <span>${infor.body}</span>    
+            </li>`
+        })
+        var html = htmls.join(" ")
+        document.getElementById("data2").innerHTML = html
+    })
 
-})
-promise123
-    .then(function () {
-        console.log('Success')   
-    })
-    .catch(function () {
-        console.log("Error");
-    })
-    .finally(function () {
-        console.log('done')
-    })
+
+// let promise123 = new Promise(function (resolve, reject) {
+//     reject()
+//     resolve()
+
+// })
+// promise123
+//     .then(function () {
+//         console.log('Success')   
+//     })
+//     .catch(function () {
+//         console.log("Error");
+//     })
+//     .finally(function () {
+//         console.log('done')
+//     })
