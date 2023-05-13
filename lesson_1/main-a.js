@@ -78,18 +78,21 @@ getComments()
             })
     })
     .then(function (data) {
-        console.log("", data)
-        let displaytHTML = document.getElementById("name_comments")
-        let htmls = ''
-        data.COMMENTS.forEach(function (COMMENTS) {
-            let result = data.USERS.find(function (USERS) {
-                return USERS.id === COMMENTS.user_id;
-            })
-            console.log("", result)
-            htmls += `<li>${result.name}: ${COMMENTS.content}</li>`
-        })
-        displaytHTML.innerHTML = htmls
+        console.log(data)
     })
+    // .then(function (data) {
+    //     console.log("", data)
+    //     let displaytHTML = document.getElementById("name_comments")
+    //     let htmls = ''
+    //     data.COMMENTS.forEach(function (COMMENTS) {
+    //         let result = data.USERS.find(function (USERS) {
+    //             return USERS.id === COMMENTS.user_id;
+    //         })
+    //         console.log("", result)
+    //         htmls += `<li>${result.name}: ${COMMENTS.content}</li>`
+    //     })
+    //     displaytHTML.innerHTML = htmls
+    // })
     
     
 
