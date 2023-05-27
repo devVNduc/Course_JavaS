@@ -60,15 +60,7 @@
 //      }
 //     )
 // }
-// function getUserByIds(usersId) {
-//     return new Promise(function (resolve) {
-//             let results = users.filter(function (users) {
-//                 return usersId.includes(users.id)
-//             })
-//             resolve(results)
-//     })
-// }
-// getComment()
+// getComments()
 //     .then(function (comment) {
 //         let usersId = comment.map(function (user) {
 //             return user.user_id
@@ -82,6 +74,7 @@
 //             })
 //     })
 //     .then(function (data) {
+//         console.log(data)
 //         let displayData = document.getElementById("data")
 //         let htmls = '';
 //         data.COMMENTS.forEach(function (COMMENTS) {
@@ -108,26 +101,26 @@
 //         let html = htmls.join(" ")
 //         document.getElementById("data2").innerHTML = html
 //     })
-let courseAPI = "http://localhost:3000/course";
-fetch(courseAPI)
-    .then(function (response) {
-        return response.json();
-    })
-    // .then(function (data) {
-    //     console.log(data)
-    // })
-    .then(function (data) {
-        let htmls = data.map(function (infor) {
-            return `
-            <li>
-            <h1>${infor.title}</h1>
-            <span>${infor.descriptions}</span>
-            </li>
-            `
-        })
-        let html = htmls.join(" ")
-        document.getElementById("data3").innerHTML = html
-    })
+// let CourseAPI = "http://localhost:3000/course";
+// fetch(courseAPI)
+//     .then(function (response) {
+//         return response.json();
+//     })
+//     // .then(function (data) {
+//     //     console.log(data)
+//     // })
+//     .then(function (data) {
+//         let htmls = data.map(function (infor) {
+//             return `
+//             <li>
+//             <h1>${infor.title}</h1>
+//             <span>${infor.descriptions}</span>
+//             </li>
+//             `
+//         })
+//         let html = htmls.join(" ")
+//         document.getElementById("data3").innerHTML = html
+//     })
 
 // let promise123 = new Promise(function (resolve, reject) {
 //     reject()
@@ -136,7 +129,7 @@ fetch(courseAPI)
 // })
 // promise123
 //     .then(function () {
-//         console.log('Success')   
+//         console.log('Success')
 //     })
 //     .catch(function () {
 //         console.log("Error");
@@ -144,3 +137,64 @@ fetch(courseAPI)
 //     .finally(function () {
 //         console.log('done')
 //     })
+//CRUD by Fetch & REST API
+let courseAPI = 'http://localhost:3000/course';
+function start() {
+    getCourses(renderCourses);
+    handleCreateForm();
+    getCourses();
+}
+start();
+function getCourses(callback) {
+    fetch(courseAPI)
+        .then((response) => response.json())
+        .then(callback)
+}
+function createCourse(dataCourse,callback) {
+    let option = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dataCourse)
+    }
+    fetch(courseAPI, option)
+        .then(function (dataCourse,callback) {
+            return JSON.stringify(dataCourse)
+        })
+        .then(callback)
+}
+function renderCourses(courses) {
+    let listCoursesBlock = document.querySelector("#list-courses")
+    let html = courses.map(function (course) {
+        return `
+            <li>
+                <h4>${course.title}</h4>
+                <p>${course.descriptions}</p>
+            </li>
+        `
+    })
+    console.log(html)
+    console.log(courses)
+    listCoursesBlock.innerHTML = html.join(' ')
+}
+function handleCreateForm() {
+    let creatbtn = document.querySelector('#create')
+    creatbtn.onclick = function () {
+        let title = document.querySelector('input[name="title"]').value
+        console.log(title)
+        let descriptions = document.querySelector('input[name="descriptions"]').value
+        console.log(descriptions)
+        let dataCourse = {
+            title: title,
+            descriptions: descriptions
+        }
+        createCourse(dataCourse, () => { 
+            getCourses(renderCourses);
+        })
+        document.querySelector('input[name="title"]').value = "";
+        document.querySelector('input[name="descriptions"]').value = "";
+    }
+    
+    
+}
