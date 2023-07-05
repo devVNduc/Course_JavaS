@@ -168,15 +168,38 @@ function renderCourses(courses) {
     let listCoursesBlock = document.querySelector("#list-courses")
     let html = courses.map(function (course) {
         return `
-            <li>
+            <li class="course-item-${course.id}">
                 <h4>${course.title}</h4>
                 <p>${course.descriptions}</p>
+                <button onclick="handleDeleteCourse(${course.id})">Xóa</button>
             </li>
         `
     })
     console.log(html)
     console.log(courses)
     listCoursesBlock.innerHTML = html.join(' ')
+}
+function handleDeleteCourse(id) {
+    let option = {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json",
+        }
+    }
+    fetch(courseAPI + "/" + id, option)
+        .then(function (response) {
+            return response.json();
+        }) 
+        .then(function () {
+            getCourses(renderCourses);
+        })
+        // .then(function () {
+        //     let deteleCourse = document.querySelector(".course-item-" + id)
+        //     if (deteleCourse) {
+        //         delecteCourse.remove();
+        //     }
+        // })
+    
 }
 function handleCreateForm() {
     let creatbtn = document.querySelector('#create')

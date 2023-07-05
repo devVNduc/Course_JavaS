@@ -1,0 +1,9 @@
+Css, Responsive
+    h1 - h6
+    p(block) span(inline)
+    inline không xét được width height
+    a href đường dẫn có tuyệt đối và tương tối
+    picture source, video ,audio
+    div
+    table tr td
+    Form
