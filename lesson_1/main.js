@@ -1,7 +1,7 @@
 //String
 /* lam viec voi mang
 1. to string (chuyen 1 array sang string)
-2.join (them ky tu giua cac phan tu)
+2. join (them ky tu giua cac phan tu)
 3. pop (xoa phan tu bat dau tu cuoi mang tro di)
 4. push (them phan tu vao cuoi mang)
 5. shift (xoa phan tu bat dau tu dau mang)
