@@ -101,8 +101,8 @@ console.log(priceList)
 // + Giảm giá 50 % tất cả sản phẩm
 var saleProduct = priceList.map(function (obj) {
     return {
-        price: Math.round(obj.price / 2),
-        name: obj.product
+        product: obj.product,
+        price: Math.round(obj.price / 2)
     }
 })
 console.log(saleProduct)
@@ -110,30 +110,30 @@ console.log("Danh sách sau khi sắp xếp giá: ")
 
 var sortPrice = saleProduct.sort(function (start, end) {
     if (start.price > end.price) {
-        return -1
+        return 1
     }
 
     if (start.price < end.price) {
-        return 1
+        return -1
     }
     return 0
 })
 console.log(sortPrice)
-// console.log("Vốn Gara phải bỏ ra đầu tư có lời")
-// var investment = priceList.reduce(function (sum, item) {
-//     sum += item.price
-//     return sum
-// },0)
-// console.log(investment * 2)
-// console.log("Hang xe Huynhdai")
-// var huynhdaiProduct = priceList.filter(function (item) {
-//     return item.product.includes("Huynhdai")
-// })
-// console.log(huynhdaiProduct)
-// //     + Tìm ra sản phẩm có giá cao nhất và giá thấp nhất
-// //     + Thêm sản phẩm vao vi tri thu 3 giữa danh sách
-// //     + Cộng giá danh sách lên 1000
-// console.log("San pham co gia thap nhat: ")
-// console.log(sortPrice.slice(0, 1))
-// console.log("San pham co gia cao nhat: ")
-// console.log(sortPrice.slice(sortPrice.length-1))
+console.log("Vốn Gara phải bỏ ra đầu tư có lời")
+var investment = priceList.reduce(function (sum, item) {
+    sum += item.price
+    return sum
+},0)
+console.log(investment * 2)
+console.log("Hang xe Huynhdai")
+var huynhdaiProduct = priceList.filter(function (item) {
+    return item.product.includes("Huynhdai")
+})
+console.log(huynhdaiProduct)
+//     + Tìm ra sản phẩm có giá cao nhất và giá thấp nhất
+//     + Thêm sản phẩm vao vi tri thu 3 giữa danh sách
+//     + Cộng giá danh sách lên 1000
+console.log("San pham co gia thap nhat: ")
+console.log(sortPrice.slice(0, 1))
+console.log("San pham co gia cao nhat: ")
+console.log(sortPrice.slice(sortPrice.length-1))
