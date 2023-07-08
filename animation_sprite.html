@@ -5,23 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .animation{
+        body{
+            margin: 0;
+            padding: 0;
             display: flex;
+            background-color: grey;
             justify-content: center;
             align-items: center;
         }
-        .box{
-            height: 100px;
-            width: 100px;
-            background-image: url("http://natcooper.com/31creepysvgs/08-black-cat-sprite.svg");
+        .castle{
+            left: 0;
+            right: 0;
+            position: relative;
+            width: 928px;
+            height: 159px;
+            background-image: url(./img/CastleCorridor.png);
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            -webkit-animation: castle 9s  infinite linear;
+        }
+        @-webkit-keyframes castle {
+            0%{
+                background-position: 0;
+            }
+            100%{
+                background-position: -928px;
+            }
+        }
+        .combatant{
+            height: 70px;
+            width: 40px;
+            position: absolute;
+            background-image: url(./img/Alucard.png);
+            bottom: 0;
+            -webkit-animation: combatant 1s steps(16) infinite ;
+        }
+           @-webkit-keyframes  combatant{
+            0%{
+                background-position: 0;
+            }
+            100%{
+                background-position: -672px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="animation_sprite">
-        <div class="box">
-
-        </div>
-    </div>    
+    <div class="castle">
+        <div class="combatant"></div>
+    </div>
 </body>
 </html>
