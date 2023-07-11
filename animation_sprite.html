@@ -49,13 +49,13 @@
         }
               
         .wrapper{
-                    border-radius: 50px;
-                    position: relative;
-                    height: 1000px;
-                    width: 1000px;
-                    display: flex;
-                    top: 210px;
-                    left: 400px;
+            position: relative;
+            border-radius: 50px;
+            width: 1000px;
+            height: 1000px;
+            display: flex;
+            top: 210px;
+            left: 400px;
         }
         .wrapper input{
             display: none;
@@ -65,8 +65,8 @@
                 height: 103px;
                 width: 200px;
                 background-color: black;
-                top: 107px;
-                left: 407px;
+                top: 106px;
+                left: 413px;
                 border-radius: 50px;
         }
        label {
@@ -80,7 +80,7 @@
                 background-color: gray;
                 overflow: hidden;
                 margin-top: 7px;
-                transition: 2s;
+                transition: 1s;
                 transition-timing-function: cubic-bezier(0, 0, 0.11, 1.18);
                 
         }
@@ -100,9 +100,7 @@
         }
         input:checked ~ .cat_run{
             -webkit-animation: catRunX 0.75s steps(3) infinite, catRunY 1.5s steps(2) infinite;
-        }
-      
-     
+        } 
         @-webkit-keyframes catRunX{
             from{
                 background-position-x: 0px;
@@ -110,14 +108,13 @@
             to{background-position-x: -2980px;
             }
         }
-          @-webkit-keyframes catRunY{
+        @-webkit-keyframes catRunY{
             from{
                 background-position-y: 0px;
             }
             to{background-position-y: -2000px;
             }
         }
-
     </style>
     
 </head>
