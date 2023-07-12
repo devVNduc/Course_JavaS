@@ -53,7 +53,7 @@ ul {
     text-decoration: none;
     font-size: 30px;
     text-align: center;
-    padding: 30px 44px;
+    padding: 33px 44px;
     color: white;
 }
 
@@ -84,8 +84,229 @@ ul {
     height: 280px;
     flex-direction: column;
     border-radius: 4px;
+    z-index: 1;
+
+
+}
+.menu-second li {
+    opacity: 0;
 }
 
 .menu-second .Menu-2 {
     list-style: none;
+}
+
+/*------------- menu1 animation -------------------*/
+
+.Menu .menu-main:hover .menu-second .m-1:first-of-type {
+    animation: menu1 0.3s ease-in-out forwards;
+    animation-delay: 0.3s;
+}
+
+.Menu .menu-main:hover .menu-second .m-1:nth-of-type(2) {
+    animation: menu1 0.3s ease-in-out forwards;
+    animation-delay: 0.6s;
+}
+
+.Menu .menu-main:hover .menu-second .m-1:nth-of-type(3) {
+    animation: menu1 0.3s ease-in-out forwards;
+    animation-delay: 0.9s;
+}
+
+.Menu .menu-main:hover .menu-second .m-1:last-of-type {
+    animation: menu1 0.3s ease-in-out forwards;
+    animation-delay: 1.2s;
+}
+
+@keyframes menu1 {
+    from {
+        transform: translateX(30px) rotateY(90deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0) rotateY(0);
+    }
+}
+
+/* ------------- menu2 animation -------------------*/
+
+.Menu .menu-main:hover .menu-second .m-2:first-of-type {
+    animation: menu2 0.3s ease-in-out forwards;
+    animation-delay: 0.3s;
+}
+
+.Menu .menu-main:hover .menu-second .m-2:nth-of-type(2) {
+    animation: menu2 0.3s ease-in-out forwards;
+    animation-delay: 0.6s;
+}
+
+.Menu .menu-main:hover .menu-second .m-2:nth-of-type(3) {
+    animation: menu2 0.3s ease-in-out forwards;
+    animation-delay: 0.9s;
+}
+
+.Menu .menu-main:hover .menu-second .m-2:last-of-type {
+    animation: menu2 0.3s ease-in-out forwards;
+    animation-delay: 1.2s;
+}
+
+@keyframes menu2 {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ------------- menu3 animation -------------------*/
+
+.Menu .menu-main:hover .menu-second .m-3:first-of-type {
+    animation: menu3 0.3s ease-in-out forwards;
+    animation-delay: 0.3s;
+}
+
+.Menu .menu-main:hover .menu-second .m-3:nth-of-type(2) {
+    animation: menu3 0.3s ease-in-out forwards;
+    animation-delay: 0.6s;
+}
+
+.Menu .menu-main:hover .menu-second .m-3:nth-of-type(3) {
+    animation: menu3 0.3s ease-in-out forwards;
+    animation-delay: 0.9s;
+}
+
+.Menu .menu-main:hover .menu-second .m-3:last-of-type {
+    animation: menu3 0.3s ease-in-out forwards;
+    animation-delay: 1.2s;
+}
+
+@keyframes menu3 {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ------------- menu4 animation -------------------*/
+
+.Menu .menu-main:hover .menu-second .m-4:first-of-type {
+    animation: menu4 0.3s ease-in-out forwards;
+    animation-delay: 0.3s;
+}
+
+.Menu .menu-main:hover .menu-second .m-4:nth-of-type(2) {
+    animation: menu4 0.3s ease-in-out forwards;
+    animation-delay: 0.6s;
+}
+
+.Menu .menu-main:hover .menu-second .m-4:nth-of-type(3) {
+    animation: menu4 0.3s ease-in-out forwards;
+    animation-delay: 0.9s;
+}
+
+.Menu .menu-main:hover .menu-second .m-4:last-of-type {
+    animation: menu4 0.3s ease-in-out forwards;
+    animation-delay: 1.2s;
+}
+
+@keyframes menu4 {
+    0% {
+        opacity: 0;
+        transform: translateX(50px) rotate(-90deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotate(0);
+    }
+}
+
+/* ------------- menu5 animation -------------------*/
+
+.Menu .menu-main:hover .menu-second .m-5:first-of-type {
+    animation: menu5 0.3s ease-in-out forwards;
+    animation-delay: 0.3s;
+}
+
+.Menu .menu-main:hover .menu-second .m-5:nth-of-type(2) {
+    animation: menu5 0.3s ease-in-out forwards;
+    animation-delay: 0.6s;
+}
+
+.Menu .menu-main:hover .menu-second .m-5:nth-of-type(3) {
+    animation: menu5 0.3s ease-in-out forwards;
+    animation-delay: 0.9s;
+}
+
+.Menu .menu-main:hover .menu-second .m-5:last-of-type {
+    animation: menu5 0.3s ease-in-out forwards;
+    animation-delay: 1.2s;
+}
+
+@keyframes menu5 {
+    0% {
+        opacity: 0;
+        transform: rotateX(-90deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
+
+/* ------------- menu6 animation -------------------*/
+
+.Menu .menu-main:hover .menu-second .m-6:first-of-type {
+    animation: menu6 0.3s ease-in-out forwards;
+    animation-delay: 0.3s;
+}
+
+.Menu .menu-main:hover .menu-second .m-6:nth-of-type(2) {
+    animation: menu6 0.3s ease-in-out forwards;
+    animation-delay: 0.6s;
+}
+
+.Menu .menu-main:hover .menu-second .m-6:nth-of-type(3) {
+    animation: menu6 0.3s ease-in-out forwards;
+    animation-delay: 0.9s;
+}
+
+.Menu .menu-main:hover .menu-second .m-6:last-of-type {
+    animation: menu6 0.3s ease-in-out forwards;
+    animation-delay: 1.2s;
+}
+
+@keyframes menu6 {
+    0% {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.main {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    background-color: black;
 }
