@@ -46,7 +46,7 @@ ul {
 
 .Menu .menu-main {
     list-style: none;
-    margin: auto 30px;
+    margin: auto auto;
 }
 
 .Menu .menu-main>a {
@@ -85,20 +85,21 @@ ul {
     flex-direction: column;
     border-radius: 4px;
     z-index: 1;
+    visibility: hidden;
 
 
 }
-.menu-second li {
-    opacity: 0;
-}
-
 .menu-second .Menu-2 {
     list-style: none;
 }
 
-/*------------- menu1 animation -------------------*/
+.Menu .menu-main:hover .menu-second {
+    visibility: visible;
+}
 
-.Menu .menu-main:hover .menu-second .m-1:first-of-type {
+/* ------------- menu1 animation ------------------- */
+
+/* .Menu .menu-main:hover .menu-second .m-1:first-of-type {
     animation: menu1 0.3s ease-in-out forwards;
     animation-delay: 0.3s;
 }
@@ -127,11 +128,11 @@ ul {
         opacity: 1;
         transform: translateX(0) rotateY(0);
     }
-}
+} */
 
 /* ------------- menu2 animation -------------------*/
 
-.Menu .menu-main:hover .menu-second .m-2:first-of-type {
+/* .Menu .menu-main:hover .menu-second .m-2:first-of-type {
     animation: menu2 0.3s ease-in-out forwards;
     animation-delay: 0.3s;
 }
@@ -166,11 +167,11 @@ ul {
         opacity: 1;
         transform: scale(1);
     }
-}
+} */
 
 /* ------------- menu3 animation -------------------*/
 
-.Menu .menu-main:hover .menu-second .m-3:first-of-type {
+/* .Menu .menu-main:hover .menu-second .m-3:first-of-type {
     animation: menu3 0.3s ease-in-out forwards;
     animation-delay: 0.3s;
 }
@@ -200,11 +201,11 @@ ul {
         opacity: 1;
         transform: translateX(0);
     }
-}
+} */
 
 /* ------------- menu4 animation -------------------*/
 
-.Menu .menu-main:hover .menu-second .m-4:first-of-type {
+/* .Menu .menu-main:hover .menu-second .m-4:first-of-type {
     animation: menu4 0.3s ease-in-out forwards;
     animation-delay: 0.3s;
 }
@@ -234,11 +235,11 @@ ul {
         opacity: 1;
         transform: translateX(0) rotate(0);
     }
-}
+} */
 
 /* ------------- menu5 animation -------------------*/
 
-.Menu .menu-main:hover .menu-second .m-5:first-of-type {
+/* .Menu .menu-main:hover .menu-second .m-5:first-of-type {
     animation: menu5 0.3s ease-in-out forwards;
     animation-delay: 0.3s;
 }
@@ -268,11 +269,11 @@ ul {
         opacity: 1;
         transform: rotateX(0);
     }
-}
+} */
 
 /* ------------- menu6 animation -------------------*/
 
-.Menu .menu-main:hover .menu-second .m-6:first-of-type {
+/* .Menu .menu-main:hover .menu-second .m-6:first-of-type {
     animation: menu6 0.3s ease-in-out forwards;
     animation-delay: 0.3s;
 }
@@ -309,4 +310,4 @@ ul {
     width: 100px;
     position: relative;
     background-color: black;
-}
+} */
