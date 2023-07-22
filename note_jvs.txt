@@ -76,12 +76,7 @@ String:
     search(regex) tim vi tri dinh dang dau tien khop phai
     split(regex)
     replace(regex) 
-    
     //regex
-            
-
-
-
 Date:
     new Date(): tạo thời gian hiện tại
     getDay : lấy thứ

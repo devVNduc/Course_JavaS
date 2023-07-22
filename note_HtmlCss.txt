@@ -16,4 +16,21 @@ DISPLAY FLEX
     order: sắp xếp thứ tự item
     flex: item chiếm bao phần còn lại
 TRANFORM
+GRID & Cắt layout
+    //cha 
+    // 1fr phan con lai
+    grid-template-rows
+    grid-template-columns
+    grid-template: row  / col
+    grid-template-arear: tenArear . . .      (co the dung repeat(n, kichthuoc) )
+
+    // con
+
+    
+    - la chieu nguoc lai ,  span noi bao phan
+    order: thu tu manh dat duoc xep hang
+
+    grid-row: vitri start / end:
+    grid-column: vitri start / end:
+    grid-arear: startR / startC / endR / endC
     

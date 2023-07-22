@@ -1,0 +1,34 @@
+body{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 400px;
+    height: 600px;
+    // border: 1px solid rgb(194, 189, 189);
+    border-radius: 20px;
+    box-shadow: 0px 0px 32px -12px grey;
+    & h1{
+        display: flex;
+        font-size: 30px;
+        font-weight: bold;
+        justify-content: center;
+        margin: 20px 0px;
+        
+    }
+    & h2{
+        display: flex;
+        font-size: 20px;
+        font-weight: 100;
+        justify-content: center;
+        & a{
+            transform: translateX(5px);
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+        }
+    }
+}
