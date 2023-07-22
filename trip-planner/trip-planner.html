@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="./asset/image/">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
 </head>
 <body>
@@ -11,19 +13,49 @@
         <h1>Get's Started.</h1>
         <h2>Don't have an account?<a href="#">Sign up</a></h2>
         <div class="SignUp">
-            <button class="btn-face"></button>
+            <button class="SignUp-btn btn-face">
+                <img src="./asset/image/facebook-logo-2019.png" alt="facebook" class="SignUp_icon">
+            </button>
+            <button class="SignUp-btn btn-google">
+                 <img src="./asset/image/google.png" alt="Google" class="SignUp_icon">
+            </button>
+            <button class="SignUp-btn btn-twitter">
+                 <img src="./asset/image/twitter.png" alt="Twitter" class="SignUp_icon">
+            </button>
         </div>
         <h3>or login with email</h3>
-        <label for="Email"></label>
-        <input type="email" id="input_email" name="inputemail">
+        <label for="Email">Email</label>
+        <input type="email" id="input_email" name="inputemail" placeholder="Email address" required>
+        <label for="Password">Password</label>
+        <input type="password" id="input_password" name="inputpassword" placeholder="Password"
+        required>
+        <div class="showPass">
+            <div id="togglePassword">
+                <i class="fa-regular fa-eye" id="change"></i>
+            </div>
+        </div>
         <div class="option">
             <input type="checkbox" id="remember" name="rememberme">
-            <span>Remember Me</span>
+            <span>Remember me</span>
             <a href="#">Forgot your password?</a>
         </div>
-        <button class="btn_signin">sign in</button>
+        <button class="btn_signin" type="submit">sign in</button>
 
     </div>
     
 </body>
+<script>
+    const togglePassword = document.querySelector("#togglePassword");
+    const chageIcon = document.querySelector("#change")
+    const password = document.querySelector("#input_password");
+    togglePassword.addEventListener('click', function(e){
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type',type);
+        if(type === 'text'){
+            chageIcon.classList.replace('fa-eye','fa-eye-slash');
+        }else{
+            chageIcon.classList.replace('fa-eye-slash','fa-eye');
+        }
+    });
+</script>
 </html>
