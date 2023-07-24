@@ -80,5 +80,4 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-@import "signup.scss";
-@import "login.scss";
+@import "signup.scss", "login.scss";

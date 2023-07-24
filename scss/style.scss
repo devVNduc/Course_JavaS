@@ -1,0 +1,8 @@
+
+/*style.scss file
+where the style is to be inherited */
+@use 'buttons';
+  
+.new-btn {
+  @extend .btn;
+}

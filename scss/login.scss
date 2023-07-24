@@ -1,48 +1,15 @@
-.container{
-    .login{
-        @extend .signup;
-        // display: flex;
-        // width: 400px;
-        // height: 45px;
-        // justify-content: space-evenly;
-        // margin: 30px 0px;
-        .login-btn{
-            padding: 0;
-            display: flex;
-            width: 100px;
-            border-radius: 10px;
-            border: 1px solid rgb(174, 173, 173);
-            background-color: white;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            .btn_link{  
-                .login_icon{
-                    width: 24px;
-                    height: 24px;
-                    transform: translateY(10px);
-                }
-            }
-
-        }
-    }
-    .btn_login{
-        cursor: pointer;
-        display: flex;
-        width: 90%;
-        padding: 12px 30px;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-        border-radius: 10px;
-        background-color: #3B71FE;
-        color: #FFF;
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 24px;
-        border: none;
-        margin: 0px 21px;
-        margin-top: 30px;
-    }
+@use "signup";
+.login{
+    @extend .SignUp;
+    // .login-btn{
+    //     @extend .SignUp-btn;
+    //     .btn_link{  
+    //         .login_icon{
+    //             @extend .SignUp_icon;
+    //         }
+    //     }
+    // }
 }
+// .btn_login{
+//     @extend .btn_signin;
+// }
