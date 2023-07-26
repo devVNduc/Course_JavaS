@@ -1,4 +1,5 @@
-@use "signup";
+// @use "signup";
+@import "signup.scss";
 .login{
     @extend .SignUp;
     .login-btn{

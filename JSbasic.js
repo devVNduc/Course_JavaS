@@ -99,25 +99,6 @@ var temp = x[x.length - 1];
 x[x.length - 1] = x[0];
 x[0] = temp;
 console.log(x);
-
-// Array:
-// Array[value1, value2, value3,...]
-// push: them cuoi
-// pop: bo cuoi
-// unshift: them dau
-// shift: bo dau
-// splice: thêm và xoá tại index
-// concat: nối mảng
-// join: nối item thành chuỗi với ký tự
-// indexOf: vị trí của phần tử
-// lastIndexOf: tương tự indexOf nhưng lấy vị trí cuối
-// filter: lọc mảng
-// map: tạo mảng mới dựa trên mảng cũ
-// find: lọc trả về 1 phần tử
-// reduce: cộng dồn
-// sort: sắp xếp các item trong mảng
-// slice: lấy mảng con
-
 // Bai 6
 var arr = [1, 6, 8, 7, 6, 9]
 console.log("So luong phan tu co trong array la: " + arr.length) 
