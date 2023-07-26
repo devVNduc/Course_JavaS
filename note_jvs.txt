@@ -5,7 +5,7 @@ lÀM VIỆC CÙNG OBJECT VÀ ARR
         + C1: Truyền thằng key Object.key
         + C2: Key là 1 chuỗi 
                 Object['key'] hoặc var a = 'key'  
-                                   Object(a)                
+                                   Object[a]                
     - Xóa 1 item trong object 
         + delete delete Object.key
     - Truy xuất array 

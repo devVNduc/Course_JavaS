@@ -25,15 +25,63 @@ console.log(result)
 var name = 1
 switch (name) {
     case 1:
-        
         break;
-
     default:
         break;
 }
 function cong(a,b) {
     
 }
+// 6 giá trị mang falcy : false, 0, "", null, undefined, NaN
+var check = false;
+if ({hi: 1}.keys) {
+console.log("ye")
+} else {
+    console.log("Hi")
+} 
+var arr = [3,1,8,2]
+for (let index = 0; index < arr.length; index++) {
+    const element = arr[index];
+    console.log(element)
+}
+var person = {
+    name: 'duc',
+    age: 18
+}
+for (var x in person) {
+    console.log(person[x])
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //switch case để xét trường hợp
 // var money = 9
 // var money = 10
