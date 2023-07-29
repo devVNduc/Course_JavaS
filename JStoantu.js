@@ -212,3 +212,62 @@ console.log(button)
 console.log(page)
 
 // Bai 9
+var a = 10
+var b = 20
+var c = 30
+// Tính thể tích của hình hộp chữ nhật
+const volume = a * b * c;
+console.log("Thể tích của hình hộp chữ nhật là: " + volume);
+// Kiểm tra xem hình hộp chữ nhật có phải là hình lập phương hay không
+if (a === b && b === c) {
+    console.log("Hình hộp chữ nhật là hình lập phương");
+    console.log("Thể tích của hình lập phương là: " + volume);
+} else {
+    console.log("Hình hộp chữ nhật không phải là hình lập phương");
+}
+// Tính đường chéo của hình hộp chữ nhật
+const diagonal = Math.sqrt(a * a + b * b + c * c);
+console.log("Đường chéo của hình hộp chữ nhật là: " + diagonal);
+// Tính chu vi của hình hộp chữ nhật
+const perimeter = 2 * (a + b + c);
+console.log("Chu vi của hình hộp chữ nhật là: " + perimeter);
+// Tính diện tích xung quanh của hình hộp chữ nhật
+const area = 2 * (a * b + a * c + b * c);
+console.log("Diện tích xung quanh của hình hộp chữ nhật là: " + area);
+// Tính diện tích toàn phần của hình hộp chữ nhật
+const totalArea = a * b * c;
+console.log("Diện tích toàn phần của hình hộp chữ nhật là: " + totalArea);
+
+// Bai 10
+console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+var pi10 = 3.14;
+// Khai báo biến r là bán kính của hình cầu
+var r10 = 10;
+// Tính diện tích mặt cầu
+var area10 = 4 * pi * r10 * r10;
+console.log("Diện tích mặt cầu là: " + area10);
+// Tính diện tích mặt cầu bằng đường kính d
+var d10 = 2 * r10;
+const area2 = pi10 * d10 * d10;
+console.log("Diện tích mặt cầu bằng đường kính d là: " + area2);
+// Tính thể tích khối cầu
+const volume10 = (4 / 3) * pi * r10 * r10 * r10;
+console.log("Thể tích khối cầu là: " + volume10)
+console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+
+// Bai 11
+const sanPham = 140;
+// Tính giá sản phẩm
+const giaSanPham = sanPham >= 100 ? 6000 : sanPham > 50 ? 7000 : sanPham > 20 ? 8000 : 10000;
+// Tính tổng tiền hàng`
+const tienHang = giaSanPham * sanPham;
+console.log("Tổng tiền hàng là: " + tienHang);
+console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+// Bai 12
+const tienLuong = 40000000;
+// Tính thuế thu nhập
+const tienThue = tienLuong > 80000000 ? 0.3 * tienLuong : tienLuong > 20000000 ? 0.2 * tienLuong : 0.1 * tienLuong;
+// Tính thu nhập thực tế
+const thuNhapThucTe = tienLuong - tienThue;
+console.log("Tiền thuế là: " + tienThue);
+console.log("Thu nhập thực tế là: " + thuNhapThucTe);
