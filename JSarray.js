@@ -86,9 +86,18 @@ var sortList3 = list3.sort(function (a, b) {
 console.log(sortList3)
 
 // bai 6
+console.log("Bai 6")
 var data = [1, 2, 3, 1, 2, 3, 4, 5, 6, 5, 4, 6]
-var arrayDupplicate = data.filter(function (d, index, thisArray) {
-    console.log("hello")
-    return thisArray[index]
-})
-console.log(arrayDupplicate)
+for (let x = 0; x < data.length; x++) {
+    for (let y = 0; y < data.length; y++) {
+        if ((data[x] == data[y]) && (x!=y)) {
+            console.log(data[x])
+        }
+    }
+} const uniqueData = data.filter((element, index) => {
+    console.log(index)
+    return data.indexOf(element) === index;
+});
+
+console.log(uniqueData);
+
