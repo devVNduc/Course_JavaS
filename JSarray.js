@@ -87,17 +87,13 @@ console.log(sortList3)
 
 // bai 6
 console.log("Bai 6")
-var data = [1, 2, 3, 1, 2, 3, 4, 5, 6, 5, 4, 6]
+var data = [1, 9,2, 3, 1, 2, 3, 4, 5, 6, 5, 4, 6, 9]
+var duplicates = []
 for (let x = 0; x < data.length; x++) {
-    for (let y = 0; y < data.length; y++) {
-        if ((data[x] == data[y]) && (x!=y)) {
-            console.log(data[x])
+    for (let y = x + 1; y < data.length; y++) {
+        if ((data[x] == data[y]) && !duplicates.includes(data[x])) {
+            duplicates.push(data[x])
         }
     }
-} const uniqueData = data.filter((element, index) => {
-    console.log(index)
-    return data.indexOf(element) === index;
-});
-
-console.log(uniqueData);
-
+}
+console.log(duplicates)
