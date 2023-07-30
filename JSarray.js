@@ -85,9 +85,9 @@ var sortList3 = list3.sort(function (a, b) {
 })
 console.log(sortList3)
 
-// bai 6
+// Bai 6
 console.log("Bai 6")
-var data = [1, 9,2, 3, 1, 2, 3, 4, 5, 6, 5, 4, 6, 9]
+var data = [1, 9, 2, 3, 1, 2, 3, 4, 5, 6, 5, 4, 6, 9, 10, 10, 19]
 var duplicates = []
 for (let x = 0; x < data.length; x++) {
     for (let y = x + 1; y < data.length; y++) {
@@ -97,3 +97,116 @@ for (let x = 0; x < data.length; x++) {
     }
 }
 console.log(duplicates)
+
+// Bai 7
+var array = [1,2, 5, 7, 8, 9, 15]
+var evenArray = array.filter(function (x) {
+    return x % 2 == 0
+})
+console.log(evenArray)
+
+var oldArray = array.filter(function (x) {
+    return x % 2 != 0
+})
+console.log(oldArray)
+
+var biggerFive = array.filter(function (x) {
+    return x > 5
+})  
+console.log(biggerFive)
+
+var divideFive = array.filter(function (x) {
+    return x % 5 == 0
+})
+console.log(divideFive)
+var biggerFiveAddOne = biggerFive.map(function (x) {
+    return x+=1
+})
+console.log(biggerFiveAddOne)
+
+var sliceArrayAt3 = array.slice(3, array.length)
+console.log(sliceArrayAt3)
+
+array.splice(2, 1)
+array.push(10)
+console.log(array)
+
+var itemMutiple2Array = []
+var itemMutiple2 = function (x) {
+    itemMutiple2Array.push(x*2)
+} 
+array.forEach(function (x) {
+    return itemMutiple2(x)
+})
+console.log(itemMutiple2Array)
+
+// Bai 8
+var arr = [1, 8, 5, 2, 7, 6, 9, 2, 6]
+var increase = arr.sort(function (a, b) {
+    if (a < b) return -1
+    if (a > b) return 1
+    if (a = b) return 0
+})
+console.log(increase)
+
+var decrease = arr.sort(function (a, b) {
+    if (a < b) return 1
+    if (a > b) return -1
+    if (a = b) return 0
+})
+console.log(decrease)
+
+// Bai 9
+var array = [1, 3, 7, 8, 9, 0, 10, 3, 2]; 
+var increase9 = array.sort(function (a, b) {
+    if (a < b) return -1
+    if (a > b) return 1
+    if (a = b) return 0
+})
+console.log(increase9)
+var itemMutiple29 = array.map(function (a) {
+    return a*2
+})
+console.log(itemMutiple29)
+
+var array3 = [1, 2, 3, 5, 1]
+array.unshift(array3)
+array.splice(5, 0, array3)
+var newArray = array.flat()
+console.log(newArray)
+var evenItem = newArray.filter(function (a) {
+    return a%2==0
+})
+var oldItem = newArray.filter(function (a) {
+    return a % 2 != 0
+})
+console.log(evenItem)
+console.log(oldItem)
+var halfArraylenght = newArray.length / 2
+newArray.splice(halfArraylenght, 0, 5)
+console.log(newArray)
+
+
+// Bai 10
+console.log("BAI 10")
+var array2 = [1, 4, 2, 4, 5, 7, 8, 3, 6, 4, 9, 1, 6, 5];
+array2.pop()
+array2.unshift(12)
+console.log(array2)
+array2.splice(2, 4)
+console.log(array2)
+console.log(array2.slice(3, 8))
+
+// bai 11
+console.log('BAI 11')
+var array3 = [1, 4, 2, 4, 5, 7, 8, 3, 6, 4, 9, 1, 6, 5, 4, 3, 8, 9];
+var newArray = array3.filter(function (a) {
+    return a % 2 == 0
+})
+console.log(newArray)
+var newArray2 = array3.filter(function (a) {
+    if (a % 2 != 0 && a > 3) {
+        return a
+    }
+})
+console.log(newArray2)
