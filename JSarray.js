@@ -210,3 +210,166 @@ var newArray2 = array3.filter(function (a) {
     }
 })
 console.log(newArray2)
+
+// Bai 12
+var array1 = [1, 5, 2, 6, 2, 8, 9, 4, 6, 2, 3, 5, 7, 9, 3, 2, 75, 6, 4, 3, 7, 5, 2, 4, 13];
+var findFirstIndex7 = array1.findIndex(function (a,index) {
+    if (a === 7) {
+        return index
+    }
+})
+console.log(findFirstIndex7)
+var findLastIndex7 = array1.lastIndexOf(7)
+console.log(findLastIndex7)
+var decreaseArray = array1.sort(function (a, b) {
+    if (a > b) { return -1 }
+    if (a < b) { return 1 }
+    if (a == b) { return 0 }
+})
+console.log(decreaseArray)
+var increaseArray = array1.sort(function (a, b) {
+    if (a > b) { return 1 }
+    if (a < b) { return -1 }
+    if (a == b) { return 0 }
+})
+console.log(increaseArray)
+
+var array2 = array1.filter(function name(item) {
+    if (item > 5) {
+        return item
+    }
+})
+console.log(array2)
+
+var array3 = array2.filter(function name(item) {
+    if (item > 5 && (item+2)%3==0) {
+        return item
+    }
+}) 
+console.log(array3)
+
+// Bai 13
+console.log('BAI 13')
+var hoaQua = [
+{ ten:'Xoài', sx:'China', sl:'100'},
+{ ten:'Xoài', sx:'VietNam', sl:'130' },
+{ ten:'Xoài', sx:'ThaiLan', sl:'100' },
+{ ten:'Cam', sx:'China', sl:'200' },
+{ ten:'Cam', sx:'ThaiLan', sl:'150' },
+{ ten:'Nho', sx:'VietNam', sl:'120' },
+{ ten:'Xoài', sx:'ThaiLan', sl:'100' },
+]
+var mdVN = hoaQua.filter(function (item) {
+    if (item.sx === 'VietNam')
+        { return item }
+})
+console.log(mdVN)
+
+var mdSlH100 = hoaQua.filter(function name(params) {
+    if (params.sl > 100) {
+        return params
+    }
+})
+console.log(mdSlH100)
+
+var name = "Xoài"
+function findFruit(name) {
+    var thisFruit = hoaQua.filter(function (params) {
+        if (params.ten === name)
+        {
+            return params
+        }
+    })
+    console.log(thisFruit)
+}
+findFruit(name)
+
+var country = "VietNam"
+function findCountry(country) {
+    var thisFruitC = hoaQua.filter(function name(params) {
+        if (params.sx === country)
+        {
+            return country
+            }
+    })
+    console.log(thisFruitC)
+}
+findCountry(country)
+
+// Bai 14
+var arr = [1, 4, 2, 5, 7, 2, 8, '23', 3, 8, 6, 'a', 3, 9, 'd', "c", 11, 'f', 'r', 35, 'g', 'b', 42, 'k', 'j', 'h', '11']
+var arrayNumber = []
+var arrayString = []
+arr.filter(function (item) {
+    if (typeof item === "number") {
+        arrayNumber.push(item)
+        arrayNumber.sort(function (a, b) {
+            if (a > b) { return 1 }
+            if (a < b) { return -1 }
+            if (a == b) { return 0 }
+        })
+        
+    }
+    else if(typeof item === "string") {
+        arrayString.push(item)  
+        arrayString.sort(function (a, b) {
+            if (a > b) { return 1 }
+            if (a < b) { return -1 }
+            if (a == b) { return 0 }
+        })
+        
+    }
+})
+var sumNumber = arrayNumber.reduce(function (sum, item) {
+    sum += item
+    return sum
+}, 0)
+console.log("SumNumber:" + sumNumber)
+var sumString = arrayString.reduce(function (sum, item) {
+    sum += item
+    return sum
+}, 0)
+console.log("SumString:" + sumString)
+console.log(arrayNumber)
+console.log(arrayString)  
+
+function isPrime(number) {
+    if (number < 2) {
+        return false;
+    }
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+var checkPrime =  arr.filter(function (item) {
+    if (typeof item === "number" && isPrime(item)) {
+        return item
+    }
+})
+console.log(checkPrime)
+
+// Bai 15
+console.log('BAI 15')
+var result = []
+var data = [1, 2, 3, 1, 2, 3, 4, 5, 6, 5, 4, 6, 3]
+function countDuplicate(data) {
+    for (let index = 0; index < data.length; index++) {
+        var count = 0
+        var item = data[index]
+        for (const item of data) {
+            if (item == data[index]) {
+                count++;
+            }
+        }
+        var countNow = count
+        result.push({
+            phanTu: item,
+            lapLai: countNow
+        })
+    }
+    console.log(result)
+}
+countDuplicate(data)
