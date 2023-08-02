@@ -373,3 +373,130 @@ function countDuplicate(data) {
     console.log(result)
 }
 countDuplicate(data)
+
+// Bai them nodemy
+var arr = [
+    { name: 'Duy', toan: 10, ly: 5 },
+    { name: 'Nam', toan: 10, ly: 1 },
+    { name: 'Khai', toan: 7, ly: 1 },
+    { name: 'Toan', toan: 4, ly: 2 },
+    { name: 'Dung', toan: 4, ly: 4 },
+    { name: 'Duc', toan: 1, ly: 10 },
+    { name: 'Hung', toan: 1, ly: 10 }
+]
+
+var chuan = {
+    A: 8,
+    B: 6,
+    C: 4
+}
+// B1: Hãy map để thêm tổng điểm vào mỗi object trong arr
+
+console.log("Them tong diem: ")
+arr.map(function (arr) {
+    arr.TongDiem = arr.toan + arr.ly
+})
+console.log(arr)
+// B2: Hãy phân loại ra mức A B C cho từng môn toán, lý,  VD: Toán 7: hạng B => {name: 'Duy', toan: 9, ly: 5, hangToan: B, hangLy: C}
+console.log("Phan hang: ")
+arr.map(function (item) {
+    if (item.toan > chuan.A) {
+        item.hangToan = "A"
+           
+    }
+    else if (item.toan > chuan.B) {
+        item.hangToan = "B"        
+    }
+    else {
+        item.hangToan = "C"        
+    }
+    if (item.ly > chuan.A) {
+        item.hangLy = "A"
+
+    }
+    else if (item.ly > chuan.B) {
+        item.hangLy = "B"
+    }
+    else {
+        item.hangLy = "C"
+    }
+       
+})
+console.log(arr)
+// B3: Sắp xếp các bạn có điểm toán giảm dần
+console.log("Sap xep diem toan giam dan: ")
+arr.sort(function (a, b) {
+    if (a.toan > b.toan) { return -1 }
+    if (a.toan < b.toan) { return 1 }
+    if (a.toan == b.toan) { return 0 }
+})
+console.log(arr)
+// B4: Sắp xếp các bạn có điểm Lý tăng dần
+console.log("Sap xep diem ly tang dan: ")
+arr.sort(function (a, b) {
+    if (a.ly > b.ly) { return 1 }
+    if (a.ly < b.ly) { return -1 }
+    if (a.ly == b.ly) { return 0 }
+})
+console.log(arr)
+
+// B5: Hãy sắp xếp các bạn có điểm Toán giảm dần, Nếu điểm toán bằng nhau thì sắp xếp theo Lý giảm dần
+console.log("Nếu điểm toán bằng nhau thì sắp xếp theo Lý giảm dần: ")
+arr.sort(function (a, b) {
+    if (a.toan > b.toan) { return -1 }
+    if (a.toan < b.toan) { return 1 }
+    if (a.toan == b.toan) {
+        if (a.ly > b.ly) { return -1 }
+        if (a.ly < b.ly) { return 1 }
+        if (a.ly == b.ly) { return 0 }
+    }
+})
+console.log(arr)
+// B6: Hãy lọc ra danh sách các bạn có Chuẩn A Toán
+console.log("Danh sách các bạn có Chuẩn A Toán: ")
+var AHangToan = arr.filter(function (a) {
+    if (a.hangToan == "A") {
+        return a.name
+    }
+})
+console.log(AHangToan)
+// B7: Hãy lọc ra danh sách các bạn có Chuẩn C Lý
+console.log("Danh sách các bạn có Chuẩn C Ly: ")
+var AHangLy = arr.filter(function (a) {
+    if (a.hangLy == "C") {
+        return a.name
+    }
+})
+console.log(AHangLy)
+// B8 Tìm bạn có điểm Lý thấp nhất,
+console.log('Bạn có điểm Lý thấp nhất :')
+arr.sort(function (a, b) {
+    if (a.ly > b.ly) { return 1 }
+    if (a.ly < b.ly) { return -1 }
+    if (a.ly == b.ly) { return 0 }
+})
+for (const item of arr) {
+    if (item.ly == arr[0].ly) {
+        console.log(item.name)
+    }
+}
+// B9 Tìm bạn có điểm Toán thấp nhất
+console.log("Bạn có điểm Toán thấp nhất: ")
+for (const item of arr) {
+    if (item.toan == arr[arr.length - 1].toan){
+        console.log(item.name)
+    }
+}
+// B10: Tìm bạn có tổng điểm cao nhất
+console.log('Bạn có tổng điểm cao nhất: ')
+arr.sort(function (a, b) {
+    if (a.TongDiem > b.TongDiem) { return 1 }
+    if (a.TongDiem < b.TongDiem) { return -1 }
+    if (a.TongDiem == b.TongDiem) { return 0 }
+})
+for (const item of arr) {
+    if (item.TongDiem == arr[arr.length - 1].TongDiem) {
+        console.log(item.name)
+    }
+}
+ 
