@@ -80,20 +80,25 @@ String:
     replace(regex) 
     //regex
 Date:
-    new Date(): tạo thời gian hiện tại
-    getDay : lấy thứ
+    toLocalDateString
+    new Date(): tạo thời gian hiện tại (Ko truyen tham so thi la cua hien tai)
+    getDay : lấy thứ 0 - 6 : Cn - T7
     getDate, set : lấy ngày
-    getMonth
+    getMonth       0 - 11 thang 1 - thang 12
     getFullyear
-    getTime: lấy tổng số ms tính từ 1975
+    getTime: lấy tổng số ms tính từ 1970
+    so sanh date phai doi sang dang object
     UTC: giờ ở mốc 0
 Math
     - Math.PI
     - Math.round() lam tron so 
     - Math.abs() tri tuyet doi
+    - Math.sqrt()
+    - Math.abs()
     - Math.ceil() lam tron tren 
     - Math.floor() lam tron duoi
-    - Math.random() tra ve so thap phan 0 < & < 1 
+    - Math.random() tra ve so thap phan 0 < & < 1
+        random từ 60 - 100 : 60 + (math.random() * 40) min-max: min + (0 => max-min) 
     - Math.min() lay so lon nhat
     - Math.max() lay so nho nhat
 Callback
@@ -103,10 +108,6 @@ Callback
 boolean: true fasle
 function: gom câu lệnh
 null
-undefined
+undefined 
 var
 let
-
-
-
-

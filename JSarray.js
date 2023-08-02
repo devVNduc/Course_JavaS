@@ -373,3 +373,45 @@ function countDuplicate(data) {
     console.log(result)
 }
 countDuplicate(data)
+
+// // PHẦN 2: ARRAY METHOD NÂNG CAO
+// // Bài 1:
+var bienLai = [
+    { ten: "an", giaTri: 300 },
+    { ten: "binh", giaTri: 180 },
+    { ten: "hoang", giaTri: 170 },
+    { ten: "van", giaTri: 100 },
+    { ten: "lam", giaTri: 200 },
+    { ten: "thinh", giaTri: 210 },
+    { ten: "diep", giaTri: 100 },
+    { ten: "huong", giaTri: 100 },
+];
+var a = bienLai.filter(function name(params) {
+    if (params.giaTri > 200) {
+        return params.ten
+    }
+})
+console.log(a)
+var order = 0;
+var stt = bienLai.find(function name(params) {
+    order++
+    if(params.ten == 'lam'){
+        return params.ten
+    }
+})
+console.log("Thu tu mua hang cua nguoi ten lam la: " + order)
+
+var regexPhone = /(\b84|\b0[35789])\s*\W?\s*([0-9]{8})\b/g
+var test = `Hiem Pham 0915049007 , sđt phu cua toi 0948021166 LAPTOP-REDMI va TET01`
+var kq = test.replaceAll(regexPhone, "*********")
+console.log(kq)
+// Doi tu gio hien tai sang các mũi giờ Anh , My và Duc
+
+var timeArea = ['America/New_York', 'Europe/Berlin', 'Europe/Amsterdam']
+function getcurrentdate(timeArea) {
+    var options =   { timeZone: timeArea}
+    var date = new Date().toLocaleString("en-US", options);
+    return date
+}
+var getNumber = prompt("Moi ban nhap so vi tri ban can tim thoi gian: ")
+console.log(`Thời gian ở ${timeArea[getNumber]} là: ` + getcurrentdate(timeArea[getNumber]))
