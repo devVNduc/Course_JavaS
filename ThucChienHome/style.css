@@ -18,7 +18,6 @@ body {
     flex-wrap: wrap;
     margin: auto;
     justify-content: space-between;
-
 }
 
 .image .img {
@@ -78,11 +77,48 @@ body {
     margin-left: 20px;
 }
 
-.next{
+.next {
     right: 0;
     margin-right: 20px;
 }
 
-.hide{
+.btn-close {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    cursor: pointer;
+    top: 0;
+    right: 0;
+    transform: translate(-20px, 20px)
+}
+
+.show {
+    animation: mymove1 0.2s linear;
+}
+
+@-webkit-keyframes mymove1 {
+    from {
+        scale: 0.8;
+    }
+
+    to {
+        scale: 1;
+    }
+}
+
+.hide {
     display: none;
+    animation: mymove2 0.2s linear;
+}
+
+@-webkit-keyframes mymove2 {
+    from {
+        scale: 1;
+    }
+
+    to {
+        scale: 0;
+    }
 }
